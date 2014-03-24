@@ -44,6 +44,6 @@ q.left.left.left.right.left = TreeNode(5)
 root = TreeNode(1)
 root.right = TreeNode(2)
 root.right.left = TreeNode(3)
-print(s.preorderTraversal(root))
+print(s.preorderTraversal(q))
 
 

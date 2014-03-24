@@ -1,0 +1,43 @@
+# Definition for a  binary tree node
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+        self.next = None
+
+class Solution:
+	# @param root, a tree node
+	# @return nothing
+	def connect(self, root):
+		if root == None or root.left == None:
+			return
+		parent = []
+		children = []
+		children.append(root.left)
+		children.append(root.right)
+		while len(children) != 0:
+			parent = children
+			children = []
+			for x in xrange(0,len(parent)-1):
+				parent[x].next = parent[x+1]
+				if parent[x].left != None:
+					children.append(parent[x].left)
+				if parent[x].right != None:
+					children.append(parent[x].right)
+			if len(children) > 0:
+				children.append(parent[-1].left)
+				children.append(parent[-1].right)
+
+root = TreeNode(3)
+root.left = TreeNode(9)
+root.right = TreeNode(20)
+root.left.right = TreeNode(7)
+root.left.left = TreeNode(15) 
+root.right.right = TreeNode(17)
+root.right.left = TreeNode(15)       
+
+root = TreeNode(3)
+s = Solution()
+s.connect(None)
+#print(root.left.left.next.next.next.val)

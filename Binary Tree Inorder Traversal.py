@@ -40,13 +40,13 @@ q.left.left = TreeNode(2)
 q.left.left.left = TreeNode(3)
 q.left.left.left.left = TreeNode(4)
 q.left.left.left.right = TreeNode(4)
-q.left.left.left.right.right = TreeNode(5.5)
+q.left.left.left.right.right = TreeNode(6)
 q.left.left.left.right.left = TreeNode(5)
 
 root = TreeNode(1)
 root.right = TreeNode(2)
 root.right.left = TreeNode(3)
-print(s.inorderTraversal(None))
+print(s.inorderTraversal(q))
 
 
 #while root.LC exist, push, root = root.left

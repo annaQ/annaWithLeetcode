@@ -8,7 +8,7 @@ class TreeNode:
 class Solution:
     # @param root, a tree node
     # @return a list of integers
-    def postorderTraversal(self, root):
+	def postorderTraversal(self, root):
 		if root == None:
 			return []
 		stack_root = []
@@ -55,7 +55,7 @@ q.left.left.left.right.left = TreeNode(5)
 root = TreeNode(1)
 root.right = TreeNode(2)
 root.right.left = TreeNode(3)
-print(s.postorderTraversal(None))
+print(s.postorderTraversal(q))
 
 
 

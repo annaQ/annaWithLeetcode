@@ -12,21 +12,18 @@ class Solution:
 	# @return a list of lists of integers
 	def levelOrder(self, root):
 		entire = []
+		parent = []
 		if root == None:
 			return entire
-		parent = [root]
+		parent.append(root)
 		while len(parent) != 0:
-			children = []
 			listLevel = []
 			for x in parent:
-				if x == None:
-					continue
 				listLevel.append(x.val)
 				if x.left != None:
-					children.append(x.left)
+					parent.append(x.left)
 				if x.right != None:
-					children.append(x.right)
-			parent = children
+					parent.append(x.right)
 			entire.append(listLevel)
 		return entire
 
@@ -36,7 +33,7 @@ root.right = TreeNode(20)
 root.right.right = TreeNode(7)
 root.right.left = TreeNode(15)
 
-root = None
+#root = None
 
 s = Solution()
 print(s.levelOrder(root))
